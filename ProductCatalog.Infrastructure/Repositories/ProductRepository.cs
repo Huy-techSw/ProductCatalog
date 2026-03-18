@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Domain.Common;
+using ProductCatalog.Domain.Common.ProductCatalog.Domain.Common;
 using ProductCatalog.Domain.Entities;
 using ProductCatalog.Domain.Interfaces;
 using ProductCatalog.Infrastructure.Data;
@@ -75,6 +77,59 @@ namespace ProductCatalog.Infrastructure.Repositories
         {
             await _context.Products.AddRangeAsync(products);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Product>> SearchAsync(ProductSearchCriteria request)
+        {
+            var query = _context.Products.AsQueryable();
+
+            // Keyword
+            if (!string.IsNullOrEmpty(request.Keyword))
+            {
+                query = query.Where(p =>
+                    p.Name.Contains(request.Keyword) ||
+                    p.Description.Contains(request.Keyword));
+            }
+
+            // Category
+            if (request.CategoryId.HasValue)
+            {
+                query = query.Where(p => p.CategoryId == request.CategoryId);
+            }
+
+            // Price range
+            if (request.MinPrice.HasValue)
+            {
+                query = query.Where(p => p.Price >= request.MinPrice);
+            }
+
+            if (request.MaxPrice.HasValue)
+            {
+                query = query.Where(p => p.Price <= request.MaxPrice);
+            }
+
+            // Sorting
+            query = request.SortBy?.ToLower() switch
+            {
+                "price" => request.IsDescending
+                    ? query.OrderByDescending(p => p.Price)
+                    : query.OrderBy(p => p.Price),
+
+                "created" => request.IsDescending
+                    ? query.OrderByDescending(p => p.CreatedAt)
+                    : query.OrderBy(p => p.CreatedAt),
+
+                _ => request.IsDescending
+                    ? query.OrderByDescending(p => p.Name)
+                    : query.OrderBy(p => p.Name)
+            };
+
+            // Pagination
+            query = query
+                .Skip((request.Page - 1) * request.PageSize)
+                .Take(request.PageSize);
+
+            return await query.AsNoTracking().ToListAsync();
         }
     }
 }

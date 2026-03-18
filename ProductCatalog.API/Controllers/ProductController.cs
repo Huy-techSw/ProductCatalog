@@ -111,5 +111,12 @@ namespace ProductCatalog.API.Controllers
 
             return Ok("Import completed");
         }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> Search([FromQuery] ProductSearchRequest request)
+        {
+            var result = await _productService.SearchAsync(request);
+            return Ok(result);
+        }
     }
 }

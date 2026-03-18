@@ -1,4 +1,6 @@
-﻿using ProductCatalog.Application.Interfaces;
+﻿using ProductCatalog.Application.DTOs;
+using ProductCatalog.Application.Interfaces;
+using ProductCatalog.Domain.Common.ProductCatalog.Domain.Common;
 using ProductCatalog.Domain.Entities;
 using ProductCatalog.Domain.Interfaces;
 using System;
@@ -52,6 +54,21 @@ namespace ProductCatalog.Application.Services
             await _repository.DeleteAsync(product);
         }
 
-        
+        public async Task<IEnumerable<Product>> SearchAsync(ProductSearchRequest request)
+        {
+            var criteria = new ProductSearchCriteria
+            {
+                Keyword = request.Keyword,
+                CategoryId = request.CategoryId,
+                MinPrice = request.MinPrice,
+                MaxPrice = request.MaxPrice,
+                SortBy = request.SortBy,
+                IsDescending = request.IsDescending,
+                Page = request.Page,
+                PageSize = request.PageSize
+            };
+
+            return await _repository.SearchAsync(criteria);
+        }
     }
 }

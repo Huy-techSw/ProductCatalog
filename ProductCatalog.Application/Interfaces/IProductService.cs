@@ -1,4 +1,5 @@
-﻿using ProductCatalog.Domain.Entities;
+﻿using ProductCatalog.Application.DTOs;
+using ProductCatalog.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,5 +24,6 @@ namespace ProductCatalog.Application.Interfaces
 
         Task DeleteProductAsync(Guid id);
 
+        Task<IEnumerable<Product>> SearchAsync(ProductSearchRequest request);
     }
 }

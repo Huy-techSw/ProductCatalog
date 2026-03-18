@@ -1,4 +1,6 @@
-﻿using ProductCatalog.Domain.Entities;
+﻿using ProductCatalog.Domain.Common;
+using ProductCatalog.Domain.Common.ProductCatalog.Domain.Common;
+using ProductCatalog.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,8 @@ namespace ProductCatalog.Domain.Interfaces
         Task UpdateAsync(Product product);
 
         Task DeleteAsync(Product product);
+
+        Task<IEnumerable<Product>> SearchAsync(ProductSearchCriteria request);
 
     }
 }
