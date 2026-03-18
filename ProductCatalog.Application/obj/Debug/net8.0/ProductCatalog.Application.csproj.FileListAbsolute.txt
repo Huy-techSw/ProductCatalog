@@ -1,0 +1,16 @@
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\bin\Debug\net8.0\ProductCatalog.Application.deps.json
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\bin\Debug\net8.0\ProductCatalog.Application.dll
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\bin\Debug\net8.0\ProductCatalog.Application.pdb
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\bin\Debug\net8.0\ProductCatalog.Domain.dll
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\bin\Debug\net8.0\ProductCatalog.Domain.pdb
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.csproj.AssemblyReference.cache
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.AssemblyInfoInputs.cache
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.AssemblyInfo.cs
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.csproj.CoreCompileInputs.cache
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.sourcelink.json
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.csproj.CopyComplete
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.dll
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\refint\ProductCatalog.Application.dll
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ProductCatalog.Application.pdb
+D:\Project\PrroductCatalog_QuangHuy\ProductCatalog.Application\obj\Debug\net8.0\ref\ProductCatalog.Application.dll
